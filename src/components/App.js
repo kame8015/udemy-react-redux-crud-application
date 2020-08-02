@@ -17,11 +17,11 @@ class App extends Component {
   }
 }
 
+// state情報をpropsとして扱うことができるようになる(propsに参加するためのチケットのようなイメージ)
 const mapStateToProps = state => ({ value: state.count.value })
-const mapDispatchToProps = dispatch => ({
-  increment: () => dispatch(increment()),
-  decrement: () => dispatch(decrement())
-})
+
+// action関数をpropsとして扱うことができるようになる
+const mapDispatchToProps = ({ increment, decrement })
 
 // stateとactionを結びつける
 export default connect(mapStateToProps, mapDispatchToProps)(App)
